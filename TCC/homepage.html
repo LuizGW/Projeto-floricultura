@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="homepage.css">
+    <!-- <link rel="stylesheet" href="reset.css"> -->
+    <title>Sobre Nós</title>
+</head>
+
+<body>
+    <div class="header" id="header">
+        <button onclick="alternaBarraLateral()" class="icone_header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg>
+        </button>
+        <div class="logo_header">
+            <img src="imagens/logo.png" alt="planta" id="logo">
+        </div>
+
+        <div class="hud_de_navegacao" id="hud_de_navegacao">
+            <button onclick="alternaBarraLateral()" class="icone_header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                </svg>
+            </button>
+            <a href="homepage.html">Home</a>
+            <a href="contato.html">Página de contato</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="sobrenos.html">Sobre Nós</a>
+            <a href="#">Sua Planta</a>
+        </div>
+    </div>
+    <div tabindex="0" onclick="fechaBarraLateral()" class="conteudo" id="conteudo">
+        <div class="campo-inicial">
+        <h1 id="bem-vindo">Seja Bem-vindo!</h1>
+       <div class="campo-nome">
+        <p id="ola">Olá!!, Qual Seu Nome? </p>
+        <div class="nome">
+            <p>Nome</p>
+        <input id="nome"  type="text" placeholder="Luiz" required>
+        </div>
+        <div class="sobrenome">
+            <p>Sobrenome</p>
+        <input id="sobrenome" type="text" placeholder="Reis" required>
+        
+    </div>
+   
+       </div>
+       
+       </div>
+    </div>
+
+
+</body>
+<footer>
+    <img src="imagens/s-5.png" alt="logo da Luiz Floricultura " id="imagem-footer">
+    <p class="copyright">&copy; Copyright Luiz Floricultura - 2023</p>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    var header = document.getElementById('header');
+    var hud_de_navegacao = document.getElementById('hud_de_navegacao');
+    var conteudo = document.getElementById('conteudo');
+    var mostraBarraLateral = false;
+
+    function alternaBarraLateral() {
+        mostraBarraLateral = !mostraBarraLateral;
+        if (mostraBarraLateral) {
+            hud_de_navegacao.style.marginLeft = '-10vw';
+            hud_de_navegacao.style.animationName = 'mostraBarraLateral';
+            conteudo.style.filter = 'blur(3px)';
+        } 
+        else {
+            hud_de_navegacao.style.marginLeft = '-100vw';
+            hud_de_navegacao.style.animationName = '';
+            conteudo.style.filter = '';
+        }
+    }
+
+    function fechaBarraLateral() {
+        if(mostraBarraLateral) {
+            alternaBarraLateral();
+        }
+    }
+
+    window.addEventListener('resize', function(event) {
+        if(window.innerWidth > 768 && mostraBarraLateral) 
+        {
+            alternaBarraLateral();
+        }
+    });
+</script>
+
+</html>

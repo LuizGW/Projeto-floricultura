@@ -1,0 +1,137 @@
+body {
+    background-image: url(imagens/laterais-contato3.jpg);
+   ;
+}
+
+
+.campo-inicial {
+    display: flex;
+    width: 98vw;
+    height: 80vh;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#bem-vindo {
+    color: black;
+    font-size: 60px;
+    margin-top: 80px;
+}
+  
+.campo-nome {
+    transition: 1s;
+    display: flex;
+    width: 35%;
+    border-radius: 10px;
+    height: 30%;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 150px;
+    background-color: var(--amarelinho);
+    border: solid  var(--marrom) 2px ;
+    
+}
+#ola {
+    color: black;
+    font-size: 20px;
+    position: absolute;
+    margin-top: 0;
+    transition: 1s;
+}
+.nome, .sobrenome {
+    color: black;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 50px;
+    align-self: center;
+    transition: 1s;
+}
+ #nome, #sobrenome {
+    text-align: center;
+    border: solid var(--marrom);
+    height: 30px;
+    margin-top: 30px;
+    margin: 8px 10px;
+    border-radius: 10px;
+ }
+
+.campo-nome:hover {
+    width: 80%;
+    height: 70%;
+    margin-top: 0;
+    .nome, .sobrenome {
+      scale: 1.2;
+      margin-right: 20px;
+      transition: 1s;
+    }
+    #ola {
+        scale: 1.5;
+        margin-top: 100px;
+        transition: 1s;
+    }
+    
+}
+@media screen and (max-width: 945px) {
+    .campo-nome {
+        width: 43%;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    #bem-vindo {
+       font-size: 45px;
+    }
+    #nome, #sobrenome {
+        width: 80%;
+    }
+    .campo-nome:hover {
+        width: 70%;
+        height: 50%;
+        margin-top: 0;
+        .nome, .sobrenome {
+          scale: 1.2;
+          margin-right: 20px;
+          transition: 1s;
+        }
+        #ola {
+            scale: 1.5;
+            margin-top: 100px;
+            transition: 1s;
+        }
+}
+}
+
+@media screen and (max-width: 375px) {
+    .campo-nome {
+        flex-direction: column;
+        width: 300px;
+        align-items: center;
+    }
+    .nome{
+        margin-top: 50px ;
+    }
+    .sobrenome{
+        margin-top: 10px ;
+    }
+    #ola {
+        margin-top: -140px;
+    }
+    .campo-nome:hover {
+        width: 70%;
+        height: 50%;
+        margin-top: 0;
+        .nome, .sobrenome {
+          scale: 1.2;
+          margin-left: 20px;
+          transition: 1s;
+        }
+        #ola {
+            scale: 1.3;
+            margin-top: -160px;
+            transition: 1s;
+        }
+
+}
+}
